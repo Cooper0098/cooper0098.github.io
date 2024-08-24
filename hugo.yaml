@@ -1,5 +1,6 @@
 
-baseURL: "https://github.com/Cooper0098/Cooper.github.io" # 主站的 URL
+# baseURL: "https://github.com/Cooper0098/Cooper.github.io" # 主站的 URL
+baseURL: "https://Cooper0098.github.io" # 主站的 URL
 title: Cooper's Blog # 站点标题
 copyright: "[©2024 Cooper's Blog](https://github.com/Cooper0098/Cooper.github.io)" # 网站的版权声明，通常显示在页脚
 theme: PaperMod # 主题
