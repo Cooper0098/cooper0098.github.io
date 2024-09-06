@@ -77,7 +77,7 @@ params:
     Title: "Hey Guys 👋 Here is Cooper!"
     # 首页的 profile 内容
     Content: >
-      Welcome to my Blog! 这里主要记录了我的视频创作的一些补充说明材料。
+      Welcome to my Blog! 这里主要记录了我的日常创作，项目计划。
       <br>
       <br>
       博客因为是托管在 Github 上面，以及，图床使用的是国外免费的 Postimages，所以，挂上一个梯子可能会让访问更加顺畅。
