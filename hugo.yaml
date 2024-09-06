@@ -77,7 +77,11 @@ params:
     Title: "Hey Guys 👋 Here is Cooper!"
     # 首页的 profile 内容
     Content: >
-      Welcome to my Blog! 这里主要记录了我的视频创作的一些补充说明材料。博客因为是托管在 Github 上面，以及，图床使用的是国外免费的 Postimages，所以，挂上一个梯子可能会让访问更加顺畅。
+      Welcome to my Blog! 这里主要记录了我的视频创作的一些补充说明材料。
+      <br>
+      <br>
+      博客因为是托管在 Github 上面，以及，图床使用的是国外免费的 Postimages，所以，挂上一个梯子可能会让访问更加顺畅。
+      <br>
       <br>
       也可以在其他地方访问我的文字材料，如下：
       <br>
@@ -126,7 +130,7 @@ params:
 
   # 评论的设置
   giscus:
-    repo: "Cooper0098/Cooper.github.io"
+    repo: "Cooper0098/cooper0098.github.io"
     repoId: "R_kgDOMfjnVQ"
     category: "Announcements"
     categoryId: "DIC_kwDOMfjnVc4ChaeA"
