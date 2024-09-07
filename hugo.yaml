@@ -131,9 +131,9 @@ params:
   # 评论的设置
   giscus:
     repo: "Cooper0098/cooper0098.github.io"
-    repoId: "R_kgDOMfjnVQ"
+    repoId: "R_kgDOMnoSoA"
     category: "Announcements"
-    categoryId: "DIC_kwDOMfjnVc4ChaeA"
+    categoryId: "DIC_kwDOMnoSoM4CiP7L"
     mapping: "pathname"
     strict: "0"
     reactionsEnabled: "1"
