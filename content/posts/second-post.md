@@ -7,7 +7,7 @@ tags = ["测试"]
 
 This is second post of site.
 
-这是用于测试的文档
+这是用于测试的文档 
 
 <div>
 
@@ -18,7 +18,7 @@ $$
 <div>
 
 
-```c
+```cpp
 
 #include <iostream>
 #include <algorithm>
@@ -51,10 +51,10 @@ int main()
 
     std::sort(arr.begin(), arr.end(), std::greater<int>());
 
-     for (int num : arr)
-     {
+    for (int num : arr)
+    {
         std::cout << num << " "<<endl;
-     }
+    }
 
 
 
