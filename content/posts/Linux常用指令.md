@@ -42,7 +42,7 @@ tags = ["指令"]
  3. 
 
 
-# 压缩解压指令
+# 压缩/解压指令
 
  1. tar  -zxvf   xxxx.tar.gz
  2. gzip 文件 压缩
