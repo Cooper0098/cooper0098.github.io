@@ -1,7 +1,8 @@
 +++
 title = 'Second Post'
 date = 2024-08-24T15:09:26+08:00
-draft = false
+categories = ["测试"]
+tags = ["测试"]
 +++
 
 This is second post of site.
