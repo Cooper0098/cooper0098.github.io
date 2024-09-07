@@ -1,4 +1,9 @@
 +++
-title = 'Tx3'
+title = 'Linux基础 '
 date = 2024-09-07T09:50:37+08:00
+
+categories = []
+tags = []
+
 +++
+
