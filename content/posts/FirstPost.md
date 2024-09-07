@@ -11,8 +11,7 @@ tags = ["博客搭建", "Bilibili"]
 
 感谢 B 站 UP 主 SonnyCalcr 的大力支持，让我得以学习并成功搭建这个个人博客网站。非常感激他的支持与指导！
 
-这是这位up主的网站（支持up）：https://space.bilibili.com/3493138859559908
-
+这是这位up主的网站（支持up）：[bilibili: SonnyCalcr](https://space.bilibili.com/3493138859559908)
 
 
 
