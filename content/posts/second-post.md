@@ -92,5 +92,3 @@ int main()
 
 ![](../img/F2fv3zFa0AAWUc8.jpg)
 
-
-
