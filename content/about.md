@@ -7,4 +7,4 @@ summary: about
 
 
 
-这里就可以写一些关于的相关信息了。
+Do not go gentle into the good night. 🌎
