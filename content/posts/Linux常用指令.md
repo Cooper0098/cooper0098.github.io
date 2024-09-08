@@ -8,11 +8,10 @@ tags = ["指令"]
 +++
 
 # 常用指令
- 1. vim    访问文本
- 2. 退出文本并保存       :wq
- 3. 返回到上一个文件夹    cd . .
- 4. 解压指令         tar  -zxvf   xxxx.tar.gz 
- 5. 
+  1. vim    访问文本
+  2. 退出文本并保存       :wq
+  3. 返回到上一个文件夹    cd . .
+  4. 解压指令         tar  -zxvf   xxxx.tar.gz 
 
 
 
@@ -38,8 +37,10 @@ tags = ["指令"]
 
 # 注销用户和登录
  1. logout 
+
  2. 退出root    logout
- 3. 
+
+    
 
 
 # 压缩/解压指令
@@ -62,10 +63,14 @@ tags = ["指令"]
 # 帮助指令
 
   1. man ls 列出所有指令
+
   2. help   +  指令
+
   3. ls -la
+
   4. ls  -la /root
-  5. 
+
+     
 
 # 文件目录指令
 1. pwd  显示出地址   
@@ -86,6 +91,10 @@ tags = ["指令"]
 16. echo $HOSTNAME  输出环境变量
 17. head 看文件的前几行
 18. ln -s  /root      /home/myroot           快捷指令指向  在myroot创建指向/root的快捷方式,  cd myroot 就会直接进入/root
+
+
+
+
 
 
 
