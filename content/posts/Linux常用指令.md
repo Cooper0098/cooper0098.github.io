@@ -92,7 +92,18 @@ tags = ["指令"]
 17. head 看文件的前几行
 18. ln -s  /root      /home/myroot           快捷指令指向  在myroot创建指向/root的快捷方式,  cd myroot 就会直接进入/root
 
+# cat命令
 
+1. cat > xxxx.c  创建文件
+2. 合并文件 cat tx1.c   tx2.c   >  tx3.c    
+3. 末尾添加内容  cat  >> tx.c  
+
+
+
+# more命令
+
+1. more -3   tx
+2. 
 
 
 
