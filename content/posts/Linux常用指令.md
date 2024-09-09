@@ -89,8 +89,9 @@ tags = ["指令"]
 14. cat  查看文件     -n 行号
 15. less 分屏查看 
 16. echo $HOSTNAME  输出环境变量
-17. head 看文件的前几行
-18. ln -s  /root      /home/myroot           快捷指令指向  在myroot创建指向/root的快捷方式,  cd myroot 就会直接进入/root
+17. head 查看文件的前几行 -> 10 行 head  xxxx.c 
+18. tail  查看末尾文件 tail  xxxx.c 
+19. ln -s  /root      /home/myroot           快捷指令指向  在myroot创建指向/root的快捷方式,  cd myroot 就会直接进入/root
 
 # cat命令
 
@@ -102,7 +103,7 @@ tags = ["指令"]
 
 # more命令
 
-1. more -3   tx
+1. more -3   tx   查看大型文件
 2. 
 
 
