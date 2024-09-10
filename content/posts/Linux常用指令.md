@@ -73,7 +73,7 @@ tags = ["指令"]
      
 
 # 文件目录指令
-1. pwd  显示出地址   
+1. **pwd  显示出地址**   
 2. cd ~  回到家目录
 3. cd .. 上一目录
 4. mkdir 创建目录  
@@ -93,6 +93,22 @@ tags = ["指令"]
 18. tail  查看末尾文件 tail  xxxx.c 
 19. ln -s  /root      /home/myroot           快捷指令指向  在myroot创建指向/root的快捷方式,  cd myroot 就会直接进入/root
 
+
+
+#  文件管理
+
+1. mkdir 创建目录 mkdir  xxxx  
+2. 多级目录创建 mkdir  -p  xxx/yyy 
+3. mkdir -m  777  xxxx 权限设置  , 777 全部  ,  4 读 ,  2  写,   1 执行
+4. mv 移动,  重命名或者移动文件 ,   mv   xxx.c   /home/zzz/targetPlace  
+5. cp 复制**文件** ,  cp  xxx.c   /home/zzz/targetPlace (目标位置) 
+6. cp -r  /home/bbb /opt  把**目录**复制到指定目录下
+7. 
+
+![image-20240909235340928](../img/image-20240909235340928.png)
+
+
+
 # cat命令
 
 1. cat > xxxx.c  创建文件
@@ -106,6 +122,48 @@ tags = ["指令"]
 1. more -3   tx   查看大型文件
 
 
+
+# grep命令
+
+1. 查找文件 grep  -i "abc....."   xxxx.c  不分大小写查找内容
+2. grep   -n   "abc....."   xxxx.c   显示匹配行, 同时不分大小写查找内容
+
+
+
+# find命令
+
+1. find -name  'tex*'  查找文件,  模糊查找
+2. find -name  'te??.c'  同理
+3. find  -name  '[a-z]*.c'  查找文件点后缀结尾的文件
+
+
+
+# locate 命令
+
+1. 快速定位文件 locate  xxxx
+
+
+
+# who 命令
+
+1. who 看用户  
+2. who -a 看详细信息
+3. whoami   查看当前是谁
+4. uname   /  uname  -a   查看 主机信息  -n   -r  -v  -m  -p  -i   -o
+
+# man命令
+
+1. 查看命令手册,  列出说明书  man  ls ---> 列出 ls的说明
+
+
+
+
+
+
+
+
+
+   
 
 
 
