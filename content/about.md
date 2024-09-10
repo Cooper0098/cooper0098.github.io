@@ -7,4 +7,4 @@ summary: about
 
 
 
-**Never said never!!!**
+**Never say never!!!**
