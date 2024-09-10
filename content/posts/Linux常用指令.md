@@ -99,11 +99,18 @@ tags = ["指令"]
 
 1. mkdir 创建目录 mkdir  xxxx  
 2. 多级目录创建 mkdir  -p  xxx/yyy 
-3. mkdir -m  777  xxxx 权限设置  , 777 全部  ,  4 读 ,  2  写,   1 执行
+3. mkdir -m  777  xxxx    ,权限设置  , 777 全部  ,  4 读 ,  2  写,   1 执行
 4. mv 移动,  重命名或者移动文件 ,   mv   xxx.c   /home/zzz/targetPlace  
 5. cp 复制**文件** ,  cp  xxx.c   /home/zzz/targetPlace (目标位置) 
 6. cp -r  /home/bbb /opt  把**目录**复制到指定目录下
-7. 
+7. rm  /  rmdir  , rm  文件名  ,  rm  -r  目录名 ,  rmdir  目录名 
+8. 更改文件所有权   chown / chgrp  ,  chown -R  root(更改后)   /home/zzz/targetPlace/xxx.c  把xxx.c的所有权改成了 root 
+9. chgrp root /home/zzz/targetPlace/yyy.c   同理
+10. 更改权限 , chmod  777 xxxx (目录) 
+11. ln 创建链接 , 约等于快捷方式 , ln    路径/xxx.c    newxxx.c  ,  删除快捷方式: rm  -rf   newxxx.c 
+12.   
+
+![image-20240910112844875](../img/image-20240910112844875.png)   
 
 ![image-20240909235340928](../img/image-20240909235340928.png)
 
