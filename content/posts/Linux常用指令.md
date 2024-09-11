@@ -179,7 +179,102 @@ tags = ["指令"]
 
 
 
-   
+# 文件系统类型
+
+![image-20240911110514902](../img/image-20240911110514902.png)
+
+![image-20240911114224707](../img/image-20240911114224707.png)
+
+
+
+1. 更改单位来查看 swap 信息 free -h 
+
+2. 挂载文件系统 sudo  mount  /dev/xxx/yyy/target    , target是挂载点 
+
+3. 卸载已挂载的文件系统  umount   target 
+
+4. 查询磁盘使用情况  df  -h  
+
+5. 检查/修改文件系统 fsck  -C  -t   $type   $路径
+
+6. 在磁盘创建文件系统  mkfs  
+
+7. 建立分区表  fdisk  -l  $路径
+
+8. 压缩工具/命令 , 压缩文件  gzip  xxxx.c  , 压缩目录 gzip  -r    /home  , 解压  gzip   -d  xxxx.c.gz  
+
+9. 压缩工具 tar , tar  --help 详细 ,  tar  -cvf  xxx.tar  (结果)   yyy.c .... (要打包压缩的文件)  
+
+10. tar 解压 tar  -xf  xxx.tar  -C  $解压放置的位置 
+
+11. bzip   **用途**: 用于压缩和解压缩文件，生成 `.bz2` 文件。
+
+    - 压缩:
+
+    ```bash
+    bzip2 filename
+    ```
+
+    这将生成一个 `filename.bz2` 文件。
+
+    - 解压缩:
+
+      ```bash
+      bzip2 -d filename.bz2
+      ```
+
+      或者使用 `bunzip2`:
+
+      ```bash
+      bunzip2 filename.bz2
+      ```
+
+    
+
+12. zip  **用途**: 用于创建和解压缩 ZIP 文件，生成 `.zip` 文件。命令:
+
+    - 压缩:
+
+      ```bash
+      zip archive.zip file1 file2
+      ```
+
+      这将创建一个 `archive.zip`，包含 `file1` 和 `file2`。
+
+    - 解压缩:
+
+      ```bash
+      unzip archive.zip
+      ```
+
+
+
+# 用户管理
+
+1. 查看用户 cat    /etc/passwd
+2. 添加用户  useradd   xxxx  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
