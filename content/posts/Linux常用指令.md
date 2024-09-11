@@ -108,7 +108,9 @@ tags = ["指令"]
 9. chgrp root /home/zzz/targetPlace/yyy.c   同理
 10. 更改权限 , chmod  777 xxxx (目录) 
 11. ln 创建链接 , 约等于快捷方式 , ln    路径/xxx.c    newxxx.c  ,  删除快捷方式: rm  -rf   newxxx.c 
-12.   
+12.   输入/输出 重新定向 , 如 date >  xx.txt  ,  date >> xx.txt  ,  应用-> 日志 , 脚本, 文件 
+
+
 
 ![image-20240910112844875](../img/image-20240910112844875.png)   
 
@@ -165,6 +167,13 @@ tags = ["指令"]
 
 
 
+
+
+
+# 软件包管理
+
+1. apt-get 命令 下载/卸载/管理 软件包
+2. which 命令查找位置
 
 
 
