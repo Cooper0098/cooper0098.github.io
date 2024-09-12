@@ -253,6 +253,7 @@ tags = ["指令"]
 
 1. 查看用户 cat    /etc/passwd
 2. 添加用户  useradd   xxxx  
+3. 创建用户组 groupadd ,  
 
 
 
