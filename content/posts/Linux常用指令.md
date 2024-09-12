@@ -252,8 +252,15 @@ tags = ["指令"]
 # 用户管理
 
 1. 查看用户 cat    /etc/passwd
-2. 添加用户  useradd   xxxx  
-3. 创建用户组 groupadd ,  
+2. 添加用户  **useradd**   xxxx  
+3. 创建用户组 groupadd ,  groupadd   xxxxgroup  ,  查看所有用户组  cat  /etc/group
+4. 记录用户操作 ,  history 
+5. passwd 改密码
+6. 删除用户  userdel  xxxuser
+7. 管理用户账号 , usermod    -l  new_name   old_name  改名 
+8. 查看用户信息 ,  id  xxxname  
+9. 用户切换 ,  su  root  ,  su  xxxname  
+10. 
 
 
 

@@ -66,7 +66,66 @@ int main() {
 
 ## 类与对象
 
+### 类（Class）
 
+类是一个用户定义的数据类型，用于封装数据和函数。类可以包含属性（成员变量）和行为（成员函数）。
+
+**定义示例**：
+
+```cpp
+class Dog {
+public:
+    // 属性
+    std::string name;
+    int age;
+
+    // 构造函数
+    Dog(std::string n, int a) : name(n), age(a) {}
+
+    // 方法
+    void bark() {
+        std::cout << name << " says woof!" << std::endl;
+    }
+};
+```
+
+### 对象（Object）
+
+对象是类的实例，通过类的构造函数创建。每个对象都有自己的属性值。
+
+**使用示例**：
+
+```cpp
+#include <iostream>
+#include <string>
+
+class Dog {
+public:
+    std::string name;
+    int age;
+
+    Dog(std::string n, int a) : name(n), age(a) {}
+
+    void bark() {
+        std::cout << name << " says woof!" << std::endl;
+    }
+};
+
+int main() {
+    // 创建对象
+    Dog myDog("Buddy", 3);
+    
+    // 调用对象的方法
+    myDog.bark(); // 输出: Buddy says woof!
+
+    return 0;
+}
+```
+
+### 总结
+
+- **类**是模板，用于定义对象的属性和行为。
+- **对象**是类的实例，具有具体的状态和行为。类和对象的结合使得 C++ 支持面向对象编程，便于代码的组织、复用和维护。
 
 
 
