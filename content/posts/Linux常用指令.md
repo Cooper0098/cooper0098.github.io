@@ -269,10 +269,11 @@ tags = ["指令"]
 
 
 1. 监视进程 , ps命令 , ps , man  ps 查看功能,  常用 : 显示所有进程 ps  -e   , 显示所有不带终端的进程 ps  -aus  ,  显示用户进程 ps  -u  root  , ps  -u  xxxname ,  ps  -l
-2. 跟踪进程命令 top ,    自动更新 4 次后退出 top -n  4;    设置 `top` 刷新时间为 5 秒  top   -d  5 ;    仅监控进程 ID 为 1810 的进程  top  -p  1810  
-3.  终止进程 kill 命令,   关闭 进程 kill  1201  (进程名) 
-4. 设置进程优先级 ,  使用ps命令查看进程nice值并且降序排列, ps  axo  pid,comn,nice  --sort=-nice  ;  查看nice值  ps  -p  1201  -o  nice  ;   修改nice值   renice  -n  10(更改值)  -o  1201 
-5. 查看进程属性  pgrep 命令 ,  常用命令 : pgrep  xxxname(进程名)   ;   pgrep  -l  ^xxxname(模糊名字查询)  
+2. 跟踪进程命令 top ,    自动更新 4 次后退出 top -n  4;    设置 `top` 刷新时间为 5 秒  top   -d  5 ;    仅监控进程 ID 为 1810 的进程  top  -p  1810  ;  
+3. htop 命令 , 升级版 top 命令 
+4. 终止进程 kill 命令,   关闭 进程 kill  1201  (进程名) 
+5. 设置进程优先级 ,  使用ps命令查看进程nice值并且降序排列, ps  axo  pid,comn,nice  --sort=-nice  ;  查看nice值  ps  -p  1201  -o  nice  ;   修改nice值   renice  -n  10(更改值)  -o  1201 
+6. 查看进程属性  pgrep 命令 ,  常用命令 : pgrep  xxxname(进程名)   ;   pgrep  -l  ^xxxname(模糊名字查询)  
 
 # 性能监控
 
@@ -288,14 +289,25 @@ tags = ["指令"]
 ![image-20240914153126788](../img/image-20240914153126788.png)  
 
 4.  报告cpu统计信息 ,  mpstat  ,  显示cpu中断数  mpstat -I SUM  
+4.  虚拟内存统计命令vmstat  -a ;  输出磁盘统计数据 vmatat  -d ;  报告虚拟内存统计信息的命令 vmstat  -s  
 
 
 
+# shell 编程基础
+
+![image-20240914225909268](../img/image-20240914225909268.png)
+
+![image-20240914230011901](../img/image-20240914230011901.png)
+
+## shell入门编程实例
+
+![image-20240914231618458](../img/image-20240914231618458.png)
+
+![image-20240914231401858](../img/image-20240914231401858.png)
 
 
 
-
-
+其他进阶shell编程资料, 在我的GitHub上可以下载: 
 
 
 
