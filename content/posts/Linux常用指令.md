@@ -282,7 +282,12 @@ tags = ["指令"]
 
 ![image-20240914002325290](../img/image-20240914002325290.png)
 
+2. 报告cpu统计数据 iostat 命令, 常用:  iostat ;  输出磁盘利用率 iostat  -d  sda1 ; 输出cpu和磁盘利用率  iostat  -t ;  显示cpu和磁盘利用率  iostat -m ; 查看cpu  iostat  -c
+2. I/O 监控命令 iotop , 需要root权限  
 
+![image-20240914153126788](../img/image-20240914153126788.png)  
+
+4.  报告cpu统计信息 ,  mpstat  ,  显示cpu中断数  mpstat -I SUM  
 
 
 
