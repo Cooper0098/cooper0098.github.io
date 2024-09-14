@@ -260,13 +260,27 @@ tags = ["指令"]
 7. 管理用户账号 , usermod    -l  new_name   old_name  改名 
 8. 查看用户信息 ,  id  xxxname  
 9. 用户切换 ,  su  root  ,  su  xxxname  
-10. 
+10. sudo 以管理者命令执行 
 
 
 
+# 进程管理
 
 
 
+1. 监视进程 , ps命令 , ps , man  ps 查看功能,  常用 : 显示所有进程 ps  -e   , 显示所有不带终端的进程 ps  -aus  ,  显示用户进程 ps  -u  root  , ps  -u  xxxname ,  ps  -l
+2. 跟踪进程命令 top ,    自动更新 4 次后退出 top -n  4;    设置 `top` 刷新时间为 5 秒  top   -d  5 ;    仅监控进程 ID 为 1810 的进程  top  -p  1810  
+3.  终止进程 kill 命令,   关闭 进程 kill  1201  (进程名) 
+4. 设置进程优先级 ,  使用ps命令查看进程nice值并且降序排列, ps  axo  pid,comn,nice  --sort=-nice  ;  查看nice值  ps  -p  1201  -o  nice  ;   修改nice值   renice  -n  10(更改值)  -o  1201 
+5. 查看进程属性  pgrep 命令 ,  常用命令 : pgrep  xxxname(进程名)   ;   pgrep  -l  ^xxxname(模糊名字查询)  
+
+# 性能监控
+
+1. 显示和配置网络设备 ,  ifconfig  -help  
+
+<img src="../img/image-20240914002152088.png" alt="image-20240914002152088" style="zoom:80%;" />
+
+![image-20240914002325290](../img/image-20240914002325290.png)
 
 
 
