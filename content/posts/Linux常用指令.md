@@ -305,15 +305,12 @@ tags = ["指令"]
 
 ![image-20240914231401858](../img/image-20240914231401858.png)
 
-其他进阶shell编程资料, 在我的GitHub上可以下载: [ Linux与shell进阶编程](https://github.com/Cooper0098/cooper0098.github.io/tree/master/content/Resource/绝版经典《Linux与Unix Shell编程指南》)
 
 
-
-
-
-
-
-
+<p>   
+   	其他进阶 shell 编程资料, 在我的 GitHub 上可以下载:    
+    <a href="https://github.com/Cooper0098/cooper0098.github.io/tree/master/content/Resource/绝版经典《Linux与Unix Shell编程指南》" target="_blank">     Linux与shell进阶编程   </a> 
+</p>
 
 
 
