@@ -186,11 +186,47 @@ index  |0x123| ==> xx
 
 
 
+# string用法
 
 
 
+在 C++ 中，`std::string` 本身不是一个栈（stack），但可以像栈一样使用，特别是利用其尾部（末尾）操作。你可以使用 `push_back` 和 `pop_back` 方法来模拟栈的行为。以下是如何用 `std::string` 模拟栈的简单示例：
 
+```cpp
+#include <iostream>
+#include <string>
 
+using namespace std;
+
+int main() {
+    string stack;
+
+    // 入栈
+    stack.push_back('A');
+    stack.push_back('B');
+    stack.push_back('C');
+
+    // 出栈
+    while (!stack.empty()) {
+        char top = stack.back(); // 获取栈顶元素
+        stack.pop_back();        // 出栈
+        cout << top << endl;     // 打印栈顶元素
+    }
+
+    return 0;
+}
+```
+
+## 代码解释：
+
+- **入栈**：使用 `push_back` 方法将元素添加到字符串末尾。
+- **出栈**：使用 `pop_back` 方法移除末尾元素，并使用 `back` 方法获取栈顶元素（末尾元素）。
+- **检查是否为空**：使用 `empty` 方法来检查栈是否为空。
+
+## 注意事项：
+
+- 尽管你可以用 `std::string` 来模拟栈，但对于更复杂的数据结构，建议使用标准库中的 `std::stack`，它提供了更明确的接口和更好的语义清晰性。
+- `std::stack` 是一个适配器，通常与其他容器（如 `std::deque` 或 `std::vector`）一起使用，可以更好地满足栈的需求。
 
 
 
