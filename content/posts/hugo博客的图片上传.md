@@ -2,7 +2,7 @@
 title = 'Hugo博客的图片上传'
 date = 2024-09-08T16:33:57+08:00
 
-categories = [""]
+categories = ["技术分享"]
 tags = ["博客", "图片显示"]
 
 +++
