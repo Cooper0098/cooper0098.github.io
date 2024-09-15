@@ -84,7 +84,7 @@ tags = ["指令"]
 9. cp -r  /home/bbb /opt  把目录复制到指定目录下
 10. \cp -r  /home/bbb /opt 强制
 11. rm 删除文件或目录 
-12. rm -rf  /home/bbb 强制删除      -f 就是强制删除不提醒
+12. **rm -rf  /home/bbb 强制删除      -f 就是强制删除不提醒**
 13. mv 移动指令 
 14. cat  查看文件     -n 行号
 15. less 分屏查看 
@@ -311,6 +311,51 @@ tags = ["指令"]
    	其他进阶 shell 编程资料, 在我的 GitHub 上可以下载:    
     <a href="https://github.com/Cooper0098/cooper0098.github.io/tree/master/content/Resource/绝版经典《Linux与Unix Shell编程指南》" target="_blank">     Linux与shell进阶编程   </a> 
 </p>
+
+
+
+
+# Linux C++引用
+
+
+
+![image-20240915153157020](../img/image-20240915153157020.png)
+
+
+
+
+
+# Linux C++智能指针
+
+## unique_ptr
+
+![image-20240915222014358](../img/image-20240915222014358.png)
+
+## shared_ptr
+
+![image-20240915222905392](../img/image-20240915222905392.png)
+
+## weak_ptr
+
+![image-20240915225233527](../img/image-20240915225233527.png)
+
+为什么要使用 weak_ptr指针:  为了解决 shared ptr 循环引用问题。
+
+
+
+# Linux客户端与服务器
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
