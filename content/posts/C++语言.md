@@ -129,7 +129,9 @@ int main() {
 
 
 
+### 注意
 
+![](../img/屏幕截图 2024-09-17 001322.png)
 
 
 
@@ -186,7 +188,7 @@ index  |0x123| ==> xx
 
 
 
-# string用法
+# string进行模拟栈的用法
 
 
 
@@ -230,7 +232,129 @@ int main() {
 
 
 
+# queue函数
 
+在 C++ 中，`queue` 是一种容器适配器，表示一个先进先出（FIFO，First In First Out）的数据结构。下面是关于 `queue` 的详细解释，包括其特点、基本操作及使用场景。
+
+## 1. 基本概念
+
+- **先进先出（FIFO）**：在队列中，第一个加入的元素是第一个被移除的元素。可以想象成排队买东西，先到的人先服务。
+- **应用**：队列广泛用于任务调度、事件驱动编程、宽度优先搜索（BFS）等场景。
+
+## 2. 引入和定义
+
+要使用 `queue`，需要引入 C++ STL 的 `<queue>` 头文件：
+
+```cpp
+#include <queue>
+```
+
+一个基本的队列定义如下：
+
+```cpp
+std::queue<int> myQueue;  // 定义一个存储整数的队列
+```
+
+## 3. 常用操作
+
+#### a. 入队（Push）
+
+使用 `push()` 方法将元素添加到队列的尾部。
+
+```cpp
+myQueue.push(10);
+myQueue.push(20);
+myQueue.push(30);
+```
+
+#### b. 出队（Pop）
+
+使用 `pop()` 方法移除队列的头部元素（最早入队的元素）。
+
+```cpp
+myQueue.pop();  // 移除队头元素（10）
+```
+
+#### c. 访问队头元素
+
+使用 `front()` 方法获取队头元素，但不会移除它。
+
+```cpp
+int frontElement = myQueue.front();  // 返回 20
+```
+
+#### d. 访问队尾元素
+
+使用 `back()` 方法获取队尾元素，但不会移除它。
+
+```cpp
+int backElement = myQueue.back();  // 返回 30
+```
+
+#### e. 检查空状态
+
+使用 `empty()` 方法检查队列是否为空。
+
+```cpp
+if (myQueue.empty()) {
+    std::cout << "队列为空" << std::endl;
+}
+```
+
+#### f. 获取队列大小
+
+使用 `size()` 方法获取队列中元素的数量。
+
+```cpp
+std::cout << "队列大小: " << myQueue.size() << std::endl;
+```
+
+## 4. 示例代码
+
+下面是一个完整的示例，演示如何使用 `queue`：
+
+```cpp
+#include <iostream>
+#include <queue>
+
+int main() {
+    std::queue<int> myQueue;
+
+    // 入队
+    myQueue.push(10);
+    myQueue.push(20);
+    myQueue.push(30);
+
+    // 输出队头和队尾元素
+    std::cout << "队头元素: " << myQueue.front() << std::endl;  // 输出 10
+    std::cout << "队尾元素: " << myQueue.back() << std::endl;    // 输出 30
+
+    // 移除队头元素
+    myQueue.pop();
+    std::cout << "新的队头元素: " << myQueue.front() << std::endl;  // 输出 20
+
+    // 检查队列大小
+    std::cout << "队列大小: " << myQueue.size() << std::endl;  // 输出 2
+
+    return 0;
+}
+```
+
+## 5. 特点
+
+- **动态大小**：队列的大小是动态的，根据元素的添加和移除而变化。
+- **基于其他容器**：`queue` 通常是基于 `deque`（双端队列）或 `list` 实现的，因此它支持快速插入和删除操作。
+- **类型安全**：由于使用模板，`queue` 可以存储任何类型的数据，确保类型安全。
+
+## 6. 应用场景
+
+- **任务调度**：在操作系统中，任务调度可以利用队列来管理待处理的任务。
+- **广度优先搜索（BFS）**：在图形算法中，`queue` 是实现 BFS 的重要工具。
+- **事件处理**：在图形用户界面（GUI）或游戏开发中，事件通常通过队列进行处理。
+
+## 7. 总结
+
+C++ 的 `queue` 提供了一种简单而高效的方法来管理数据。在需要处理顺序、维持元素顺序的场景中，`queue` 是一个非常有用的工具。它的基本操作简单明了，使得程序员能够快速实现和使用这一数据结构。
 
 
 
