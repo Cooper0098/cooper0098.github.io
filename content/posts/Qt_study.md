@@ -1,5 +1,5 @@
 +++
-title = 'Qt_Study'
+title = 'Qt开发的学习记录'
 date = 2024-09-07T09:59:59+08:00
 categories = ["Qt"]
 tags = ["Qt" , "学习"]
