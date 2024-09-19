@@ -97,18 +97,17 @@ tags = ["指令"]
 
 #  文件管理
 
-1. mkdir 创建目录 mkdir  xxxx  
-2. 多级目录创建 mkdir  -p  xxx/yyy 
-3. mkdir -m  777  xxxx    ,权限设置  , 777 全部  ,  4 读 ,  2  写,   1 执行
-4. mv 移动,  重命名或者移动文件 ,   mv   xxx.c   /home/zzz/targetPlace  
-5. cp 复制**文件** ,  cp  xxx.c   /home/zzz/targetPlace (目标位置) 
-6. cp -r  /home/bbb /opt  把**目录**复制到指定目录下
-7. rm  /  rmdir  , rm  文件名  ,  rm  -r  目录名 ,  rmdir  目录名 
-8. 更改文件所有权   chown / chgrp  ,  chown -R  root(更改后)   /home/zzz/targetPlace/xxx.c  把xxx.c的所有权改成了 root 
-9. chgrp root /home/zzz/targetPlace/yyy.c   同理
-10. 更改权限 , chmod  777 xxxx (目录) 
-11. ln 创建链接 , 约等于快捷方式 , ln    路径/xxx.c    newxxx.c  ,  删除快捷方式: rm  -rf   newxxx.c 
-12.   输入/输出 重新定向 , 如 date >  xx.txt  ,  date >> xx.txt  ,  应用-> 日志 , 脚本, 文件 
+1. 使用 `mkdir` 创建目录。例如，`mkdir xxxx` 将在当前位置创建一个名为 "xxxx" 的目录。
+2. 要创建多级目录，可以使用 `mkdir -p` 命令。例如，`mkdir -p xxx/yyy` 将在 "xxx" 目录下创建一个名为 "yyy" 的子目录。
+3. 使用 `mkdir -m 777` 命令创建目录时，可以直接设置权限。数字 "777" 表示所有权限（读、写和执行）。另外，"4" 代表读权限，"2" 代表写权限，"1" 代表执行权限。
+4. `mv` 命令用于移动文件或重命名文件。例如，`mv xxx.c /home/zzz/targetPlace` 将把 "xxx.c" 文件移动到 "/home/zzz/targetPlace" 目录。
+5. 使用 `cp` 命令复制文件。例如，`cp xxx.c /home/zzz/targetPlace` 将把 "xxx.c" 文件复制到 "/home/zzz/targetPlace" 目录。
+6. 若要复制目录，应使用 `cp -r` 命令。例如，`cp -r /home/bbb /opt` 将把 "/home/bbb" 目录复制到 "/opt" 目录。
+7. `rm` 用于删除文件或目录，而 `rmdir` 仅用于删除空目录。删除文件时，使用 `rm 文件名`；删除目录（及其内容）时，使用 `rm -r 目录名`；删除空目录时，使用 `rmdir 目录名`。
+8. 使用 `chown` 和 `chgrp` 命令更改文件的所有权。例如，`chown -R root /home/zzz/targetPlace/xxx.c` 将把 "xxx.c" 文件的所有权更改为 root 用户。同理，使用 `chgrp` 命令更改文件的群组所有权。
+9. 使用 `chmod` 命令更改文件或目录的权限。例如，`chmod 777 xxxx（目录）` 将为名为 "xxxx" 的目录设置所有权限（读、写和执行）。
+10. `ln` 命令用于创建链接，类似于快捷方式。例如，`ln 路径/xxx.c newxxx.c` 将在当前位置创建一个指向 "xxx.c" 的新链接 "newxxx.c"。若要删除快捷方式，可以使用 `rm -rf` 命令。
+11. 输入/输出重定向是一种将命令的输出发送到文件而不是屏幕的技术。例如，`date > xx.txt` 将当前日期和时间写入 "xx.txt" 文件。而 `date >> xx.txt` 会将日期和时间追加到文件的末尾，常用于日志、脚本和文件中。
 
 
 
@@ -120,49 +119,67 @@ tags = ["指令"]
 
 # cat命令
 
-1. cat > xxxx.c  创建文件
-2. 合并文件 cat tx1.c   tx2.c   >  tx3.c    
-3. 末尾添加内容  cat  >> tx.c  
+1. 使用 `cat > xxxx.c` 创建一个新文件 "xxxx.c"。此命令进入文本输入模式，可以直接输入内容，输入完成后按 `Ctrl+D` 保存并退出。
 
-
+1. 合并文件可以使用 `cat` 命令。例如，`cat tx1.c tx2.c > tx3.c` 将分别将 "tx1.c" 和 "tx2.c" 的内容合并并输出到 "tx3.c" 文件中。
+2. 要向文件末尾添加内容，使用 `cat >> tx.c`。此命令进入文本输入模式，输入完内容后，同样按 `Ctrl+D` 保存并退出。
 
 # more命令
 
-1. more -3   tx   查看大型文件
+
+
+1. 使用 `more` 命令可以逐屏查看大型文件。例如，`more -3 tx` 将从文件 "tx" 的第三行开始显示内容。使用方向键或空格键可以向下滚动，按 `q` 退出查看。
 
 
 
 # grep命令
 
-1. 查找文件 grep  -i "abc....."   xxxx.c  不分大小写查找内容
-2. grep   -n   "abc....."   xxxx.c   显示匹配行, 同时不分大小写查找内容
+
+
+1. 使用 `grep -i "abc....." xxxx.c` 查找文件 "xxxx.c" 中的内容，`-i` 选项使搜索不区分大小写。
+2. 使用 `grep -n -i "abc....." xxxx.c` 查找文件 "xxxx.c" 中的内容，`-n` 选项会显示匹配行的行号，且同样不区分大小写。
 
 
 
 # find命令
 
-1. find -name  'tex*'  查找文件,  模糊查找
-2. find -name  'te??.c'  同理
-3. find  -name  '[a-z]*.c'  查找文件点后缀结尾的文件
+1. 使用 `find -name 'tex*'` 查找当前目录及子目录中以 "tex" 开头的文件，支持模糊查找。
+2. 使用 `find -name 'te??.c'` 查找当前目录及子目录中以 "te" 开头，后跟任意两个字符且以 ".c" 结尾的文件。
+3. 使用 `find -name '[a-z]*.c'` 查找当前目录及子目录中以小写字母开头且以 ".c" 结尾的文件。
 
 
 
 # locate 命令
 
-1. 快速定位文件 locate  xxxx
 
 
+1. 要快速定位文件，可以使用 `locate xxxx` 命令。此命令通过查询系统中的文件数据库，迅速找出包含 "xxxx" 的文件路径。请确保在使用前更新数据库，通常可以通过 `updatedb` 命令实现。
 
 # who 命令
 
-1. who 看用户  
-2. who -a 看详细信息
-3. whoami   查看当前是谁
-4. uname   /  uname  -a   查看 主机信息  -n   -r  -v  -m  -p  -i   -o
+
+
+1. 使用 `who` 查看当前登录的用户。
+2. 使用 `who -a` 查看详细的用户信息，包括登录时间和终端等。
+3. 使用 `whoami` 查看当前用户的用户名。
+4. 使用 `uname` 命令查看主机信息，`uname -a` 则显示所有相关信息，包括主机名、内核版本、硬件架构等。常用选项包括：
+   - `-n`: 显示主机名
+   - `-r`: 显示内核版本
+   - `-v`: 显示内核版本号
+   - `-m`: 显示机器硬件名称
+   - `-p`: 显示处理器架构
+   - `-i`: 显示硬件平台
+   - `-o`: 显示操作系统名称
 
 # man命令
 
-1. 查看命令手册,  列出说明书  man  ls ---> 列出 ls的说明
+
+
+1. 要查看命令手册，可以使用 `man` 命令。具体示例：
+
+   - 使用 `man ls` 查看 `ls` 命令的说明书。这将打开 `ls` 命令的手册页，其中包括用法、选项和示例等详细信息。
+
+   要退出手册页，可以按 `q`。
 
 
 
@@ -175,7 +192,46 @@ tags = ["指令"]
 1. apt-get 命令 下载/卸载/管理 软件包
 2. which 命令查找位置
 
+1. 使用 `apt-get` 命令下载、卸载和管理软件包。例如：
 
+   - `apt-get install package_name` 安装软件包。
+   - `apt-get remove package_name` 卸载软件包。
+
+2. 使用 `which` 命令查找可执行文件的位置。例如，`which command_name` 将显示该命令的完整路径。
+## **不同系统管理**
+
+   ### Debian/Ubuntu 系统
+
+   - **下载软件包**: `apt-get install package_name`
+   - **卸载软件包**: `apt-get remove package_name`
+   - **更新软件包列表**: `apt-get update`
+   - **升级软件包**: `apt-get upgrade`
+
+   ### Red Hat/CentOS 系统
+
+   - **下载软件包**: `yum install package_name`
+   - **卸载软件包**: `yum remove package_name`
+   - **更新软件包列表**: `yum check-update`
+   - **升级软件包**: `yum update`
+
+   ### Arch Linux 系统
+
+   - **下载软件包**: `pacman -S package_name`
+   - **卸载软件包**: `pacman -R package_name`
+   - **更新软件包列表和升级**: `pacman -Syu`
+
+   ### macOS (使用 Homebrew)
+
+   - **下载软件包**: `brew install package_name`
+   - **卸载软件包**: `brew uninstall package_name`
+   - **更新软件包列表**: `brew update`
+   - **升级软件包**: `brew upgrade`
+
+   ### Windows (使用 Chocolatey)
+
+   - **下载软件包**: `choco install package_name`
+   - **卸载软件包**: `choco uninstall package_name`
+   - **更新软件包**: `choco upgrade all`
 
 
 
@@ -187,109 +243,152 @@ tags = ["指令"]
 
 
 
-1. 更改单位来查看 swap 信息 free -h 
-
-2. 挂载文件系统 sudo  mount  /dev/xxx/yyy/target    , target是挂载点 
-
-3. 卸载已挂载的文件系统  umount   target 
-
-4. 查询磁盘使用情况  df  -h  
-
-5. 检查/修改文件系统 fsck  -C  -t   $type   $路径
-
-6. 在磁盘创建文件系统  mkfs  
-
-7. 建立分区表  fdisk  -l  $路径
-
-8. 压缩工具/命令 , 压缩文件  gzip  xxxx.c  , 压缩目录 gzip  -r    /home  , 解压  gzip   -d  xxxx.c.gz  
-
-9. 压缩工具 tar , tar  --help 详细 ,  tar  -cvf  xxx.tar  (结果)   yyy.c .... (要打包压缩的文件)  
-
-10. tar 解压 tar  -xf  xxx.tar  -C  $解压放置的位置 
-
-11. bzip   **用途**: 用于压缩和解压缩文件，生成 `.bz2` 文件。
-
-    - 压缩:
-
-    ```bash
-    bzip2 filename
-    ```
-
-    这将生成一个 `filename.bz2` 文件。
-
-    - 解压缩:
-
-      ```bash
-      bzip2 -d filename.bz2
-      ```
-
-      或者使用 `bunzip2`:
-
-      ```bash
-      bunzip2 filename.bz2
-      ```
-
-    
-
-12. zip  **用途**: 用于创建和解压缩 ZIP 文件，生成 `.zip` 文件。命令:
-
-    - 压缩:
-
-      ```bash
-      zip archive.zip file1 file2
-      ```
-
-      这将创建一个 `archive.zip`，包含 `file1` 和 `file2`。
-
-    - 解压缩:
-
-      ```bash
-      unzip archive.zip
-      ```
-
-
+1. 查看swap信息并更改单位显示：`free -h`。
+2. 挂载文件系统：使用 `sudo mount` 命令挂载文件系统到指定目标点，例如 `sudo mount /dev/xxx/yyy target`。其中，`target` 是挂载点。
+3. 卸载已挂载的文件系统：使用 `umount` 命令卸载挂载点，例如 `umount target`。
+4. 查询磁盘使用情况：使用 `df -h` 命令查看磁盘的可用空间等信息。
+5. 检查或修改文件系统：使用 `fsck` 命令进行磁盘检查和修复。可以使用 `-C` 和 `-t $type $路径` 参数来指定检查的类型和路径。具体语法可查看 `fsck --help` 获取更多信息。
+6. 在磁盘上创建文件系统：使用 `mkfs` 命令。具体文件系统类型可以通过查看系统支持的选项来确定。例如，创建ext4文件系统可以使用 `mkfs.ext4` 命令。
+7. 查看分区表：使用 `fdisk -l $路径` 命令来查看指定设备的分区表信息。如果只是想列出当前系统所有设备，可以省略 `$路径` 参数。
+8. 使用gzip压缩工具：压缩文件使用 `gzip xxxx.c`，压缩目录使用 `gzip -r /home`，解压使用 `gzip -d xxxx.c.gz`。注意，gzip 会替换原始文件为 `.gz` 格式。
+9. 使用tar命令进行压缩和解压：查看tar的帮助信息可以使用 `tar --help`。压缩文件可以使用 `tar -cvf xxx.tar yyy.c ...`，解压可以使用 `tar -xf xxx.tar -C $解压放置的位置`。
+10. 使用bzip压缩和解压缩工具：压缩时使用 `bzip2 filename` 生成 `.bz2` 文件，解压缩时使用 `bzip2 -d filename.bz2` 或 `bunzip2 filename.bz2`。
+11. 使用zip命令创建和解压ZIP文件：压缩时使用 `zip archive.zip file1 file2` 创建ZIP文件，解压时使用 `unzip archive.zip` 解压ZIP文件。
 
 # 用户管理
 
-1. 查看用户 cat    /etc/passwd
-2. 添加用户  **useradd**   xxxx  
-3. 创建用户组 groupadd ,  groupadd   xxxxgroup  ,  查看所有用户组  cat  /etc/group
-4. 记录用户操作 ,  history 
-5. passwd 改密码
-6. 删除用户  userdel  xxxuser
-7. 管理用户账号 , usermod    -l  new_name   old_name  改名 
-8. 查看用户信息 ,  id  xxxname  
-9. 用户切换 ,  su  root  ,  su  xxxname  
-10. sudo 以管理者命令执行 
-
-
+1. 查看用户信息，可以使用 `cat  /etc/passwd` 命令。
+2. 添加用户可以使用 `useradd` 命令。例如，`useradd xxxx` 将创建一个名为 "xxxx" 的新用户。
+3. 创建用户组使用 `groupadd` 命令。例如，`groupadd xxxxgroup` 将创建一个名为 "xxxxgroup" 的新用户组。查看所有用户组信息可以使用 `cat /etc/group`。
+4. 要查看用户执行过的命令记录，可以使用 `history` 命令。
+5. 使用 `passwd` 命令更改密码。执行此命令后，系统会提示输入当前用户的旧密码以及新密码。
+6. 删除用户可以使用 `userdel` 命令。例如，`userdel xxxuser` 将删除名为 "xxxuser" 的用户。
+7. 管理用户账号，包括修改用户名，可以使用 `usermod` 命令。例如，`usermod -l new_name old_name` 将把 "old_name" 的用户名更改为 "new_name"。
+8. 查看用户信息，可以使用 `id xxxname` 命令，这将显示名为 "xxxname" 的用户的详细信息。
+9. 用户切换可以使用 `su` 命令。例如，`su root` 将切换到 root 用户，而 `su xxxname` 将切换到名为 "xxxname" 的用户。
+10. 使用 `sudo` 命令可以以管理员权限执行命令。在执行需要特权的命令前，输入 `sudo` 和该命令，然后输入管理员密码即可。
 
 # 进程管理
 
 
 
-1. 监视进程 , ps命令 , ps , man  ps 查看功能,  常用 : 显示所有进程 ps  -e   , 显示所有不带终端的进程 ps  -aus  ,  显示用户进程 ps  -u  root  , ps  -u  xxxname ,  ps  -l
-2. 跟踪进程命令 top ,    自动更新 4 次后退出 top -n  4;    设置 `top` 刷新时间为 5 秒  top   -d  5 ;    仅监控进程 ID 为 1810 的进程  top  -p  1810  ;  
-3. htop 命令 , 升级版 top 命令 
-4. 终止进程 kill 命令,   关闭 进程 kill  1201  (进程名) 
-5. 设置进程优先级 ,  使用ps命令查看进程nice值并且降序排列, ps  axo  pid,comn,nice  --sort=-nice  ;  查看nice值  ps  -p  1201  -o  nice  ;   修改nice值   renice  -n  10(更改值)  -o  1201 
-6. 查看进程属性  pgrep 命令 ,  常用命令 : pgrep  xxxname(进程名)   ;   pgrep  -l  ^xxxname(模糊名字查询)  
+
+
+1. **监视进程**：
+   - 使用 `ps` 命令查看当前进程。
+   - 查看 `ps` 手册：`man ps`。
+   - 常用选项：
+     - 显示所有进程：`ps -e`
+     - 显示不带终端的所有进程：`ps -au`
+     - 显示特定用户的进程：`ps -u root` 或 `ps -u xxxname`
+     - 显示详细信息：`ps -l`
+2. **跟踪进程**：
+   - 使用 `top` 命令监控进程。
+   - 自动更新 4 次后退出：`top -n 4`
+   - 设置刷新时间为 5 秒：`top -d 5`
+   - 仅监控特定进程 ID（如 1810）：`top -p 1810`
+3. **htop 命令**：
+   - `htop` 是 `top` 的升级版，提供更友好的用户界面和交互功能。
+4. **终止进程**：
+   - 使用 `kill` 命令终止进程。例如，`kill 1201` 将关闭进程 ID 为 1201 的进程。
+5. **设置进程优先级**：
+   - 查看进程 nice 值并按降序排列：`ps axo pid,comm,nice --sort=-nice`
+   - 查看特定进程的 nice 值：`ps -p 1201 -o nice`
+   - 修改进程的 nice 值：`renice -n 10 -p 1201`
+6. **查看进程属性**：
+   - 使用 `pgrep` 命令查找进程。
+   - 常用命令：
+     - 查询特定进程名：`pgrep xxxname`
+     - 模糊查询进程名：`pgrep -l ^xxxname`
 
 # 性能监控
 
-1. 显示和配置网络设备 ,  ifconfig  -help  
+## 显示和配置网络设备
+
+1. **查看网络设备信息**：
+   - 使用 `ifconfig` 命令可以查看当前网络配置。
+   - 显示所有网络设备及其状态：`ifconfig`
+2. **帮助文档**：
+   - 查看 `ifconfig` 的帮助信息：`ifconfig --help`
+3. **常用选项**：
+   - 启用网络接口：`ifconfig eth0 up` （将 `eth0` 替换为实际接口名）
+   - 禁用网络接口：`ifconfig eth0 down`
+   - 设置 IP 地址：`ifconfig eth0 192.168.1.100`
+   - 设置子网掩码：`ifconfig eth0 netmask 255.255.255.0`
+   - 查看特定接口信息：`ifconfig eth0`
+
+### 现代替代工具
+
+- 在许多现代 Linux 发行版中，
+
+  ```
+  ifconfig
+  ```
+
+   
+
+  已被
+
+   
+
+  ```
+  ip
+  ```
+
+   
+
+  命令替代，建议使用：
+
+  - 查看网络设备信息：`ip addr`
+  - 启用接口：`ip link set eth0 up`
+  - 禁用接口：`ip link set eth0 down`
+  - 设置 IP 地址：`ip addr add 192.168.1.100/24 dev eth0`
 
 <img src="../img/image-20240914002152088.png" alt="image-20240914002152088" style="zoom:80%;" />
 
 ![image-20240914002325290](../img/image-20240914002325290.png)
 
-2. 报告cpu统计数据 iostat 命令, 常用:  iostat ;  输出磁盘利用率 iostat  -d  sda1 ; 输出cpu和磁盘利用率  iostat  -t ;  显示cpu和磁盘利用率  iostat -m ; 查看cpu  iostat  -c
-2. I/O 监控命令 iotop , 需要root权限  
+## CPU 统计数据
+
+1. iostat 命令
+
+   ：
+
+   - 基本使用：`iostat` 显示 CPU 和 I/O 统计信息。
+   - 输出磁盘利用率：`iostat -d sda1` （显示指定磁盘的利用信息）。
+   - 输出 CPU 和磁盘利用率：`iostat -t` （包含时间戳）。
+   - 显示 CPU 和磁盘利用率的详细信息：`iostat -m` （以兆字节为单位显示）。
+   - 查看 CPU 使用情况：`iostat -c` （只显示 CPU 统计数据）。
+
+### I/O 监控
+
+1. iotop 命令
+
+   ：
+
+   - `iotop` 用于实时监控 I/O 使用情况。
+   - 需要 root 权限，可以使用 `sudo iotop` 来执行该命令。
 
 ![image-20240914153126788](../img/image-20240914153126788.png)  
 
-4.  报告cpu统计信息 ,  mpstat  ,  显示cpu中断数  mpstat -I SUM  
-4.  虚拟内存统计命令vmstat  -a ;  输出磁盘统计数据 vmatat  -d ;  报告虚拟内存统计信息的命令 vmstat  -s  
+## CPU 统计信息
+
+1. mpstat 命令
+
+   ：
+
+   - 使用 `mpstat` 报告 CPU 统计信息。
+   - 显示 CPU 中断数：`mpstat -I SUM`。
+
+## 虚拟内存统计
+
+1. vmstat 命令
+
+   ：
+
+   - 查看所有虚拟内存的统计信息：`vmstat -a`。
+   - 输出磁盘统计数据：`vmstat -d`。
+   - 报告虚拟内存统计的详细信息：`vmstat -s`。
 
 
 
