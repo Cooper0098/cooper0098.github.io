@@ -674,11 +674,10 @@ func function_name( [parameter list] ) [return_types] {
 
 
 
-### 实例
+## 实例
 
 以下实例为 max() 函数的代码，该函数传入两个整型参数 num1 和 num2，并返回这两个参数的最大值：
 
-## 实例
 
 ```go
 /* 函数返回两个数的最大值 */
@@ -694,4 +693,115 @@ func max(num1, num2 int) int {
    return result 
 }
 ```
+
+
+
+## 函数调用
+
+当创建函数时，你定义了函数需要做什么，通过调用该函数来执行指定任务。
+
+调用函数，向函数传递参数，并返回值，例如：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   /* 定义局部变量 */
+   var a int = 100
+   var b int = 200
+   var ret int
+
+   /* 调用函数并返回最大值 */
+   ret = max(a, b)
+
+   fmt.Printf( "最大值是 : %d\n", ret )
+}
+
+/* 函数返回两个数的最大值 */
+func max(num1, num2 int) int {
+   /* 定义局部变量 */
+   var result int
+
+   if (num1 > num2) {
+      result = num1
+   } else {
+      result = num2
+   }
+   return result 
+}
+```
+
+以上实例在 main() 函数中调用 max（）函数，执行结果为：
+
+```go
+最大值是 : 200
+```
+
+## 函数返回多个值
+
+Go 函数可以返回多个值，例如：
+
+## 实例
+
+```go
+package main
+
+import "fmt"
+
+func swap(x, y string) (string, string) {
+   return y, x
+}
+
+func main() {
+   a, b := swap("Google", "Runoob")
+   fmt.Println(a, b)
+}
+```
+
+
+
+以上实例执行结果为：
+
+```go
+Runoob Google
+```
+
+## 函数参数
+
+函数如果使用参数，该变量可称为函数的形参。
+
+形参就像定义在函数体内的局部变量。
+
+调用函数，可以通过两种方式来传递参数：
+
+| 传递类型                                                     | 描述                                                         |
+| ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [值传递](https://www.runoob.com/go/go-function-call-by-value.html) | 值传递是指在调用函数时将实际参数复制一份传递到函数中，这样在函数中如果对参数进行修改，将不会影响到实际参数。 |
+| [引用传递](https://www.runoob.com/go/go-function-call-by-reference.html) | 引用传递是指在调用函数时将实际参数的地址传递到函数中，那么在函数中对参数所进行的修改，将影响到实际参数。 |
+
+默认情况下，Go 语言使用的是值传递，即在调用过程中不会影响到实际参数。
+
+------
+
+## 函数用法
+
+| 函数用法                                                     | 描述                                     |
+| ------------------------------------------------------------ | ---------------------------------------- |
+| [函数作为另外一个函数的实参](https://www.runoob.com/go/go-function-as-values.html) | 函数定义后可作为另外一个函数的实参数传入 |
+| [闭包](https://www.runoob.com/go/go-function-closures.html)  | 闭包是匿名函数，可在动态编程中使用       |
+| [方法](https://www.runoob.com/go/go-method.html)             | 方法就是一个包含了接受者的函数           |
+
+
+
+
+
+
+
+# Go 语言变量作用域
+
+
+
+
 
