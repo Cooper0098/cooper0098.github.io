@@ -959,3 +959,580 @@ main()函数中 c = 30
 
 
 # Go 语言数组
+
+Go 语言提供了数组类型的数据结构。
+
+数组是具有相同唯一类型的一组已编号且长度固定的数据项序列，这种类型可以是任意的原始类型例如整型、字符串或者自定义类型。
+
+相对于去声明 **number0, number1, ..., number99** 的变量，使用数组形式 **numbers[0], numbers[1] ..., numbers[99]** 更加方便且易于扩展。
+
+数组元素可以通过索引（位置）来读取（或者修改），索引从 0 开始，第一个元素索引为 0，第二个索引为 1，以此类推。
+
+
+
+## 声明数组
+
+Go 语言数组声明需要指定元素类型及元素个数，语法格式如下：
+
+```go
+var arrayName [size]dataType
+```
+
+其中，**arrayName** 是数组的名称，**size** 是数组的大小，**dataType** 是数组中元素的数据类型。
+
+以下定义了数组 balance 长度为 10 类型为 float32：
+
+```go
+var balance [10]float32
+```
+
+## 初始化数组
+
+以下演示了数组初始化：
+
+以下实例声明一个名为 numbers 的整数数组，其大小为 5，在声明时，数组中的每个元素都会根据其数据类型进行默认初始化，对于整数类型，初始值为 0。
+
+```go
+var numbers [5]int
+```
+
+还可以使用初始化列表来初始化数组的元素：
+
+```go
+var numbers = [5]int{1, 2, 3, 4, 5}
+```
+
+以上代码声明一个大小为 5 的整数数组，并将其中的元素分别初始化为 1、2、3、4 和 5。
+
+另外，还可以使用 := 简短声明语法来声明和初始化数组：
+
+```go
+numbers := [5]int{1, 2, 3, 4, 5}
+```
+
+以上代码创建一个名为 numbers 的整数数组，并将其大小设置为 5，并初始化元素的值。
+
+**注意：**在 Go 语言中，数组的大小是类型的一部分，因此不同大小的数组是不兼容的，也就是说 [5]int 和 [10]int 是不同的类型。
+
+以下定义了数组 balance 长度为 5 类型为 float32，并初始化数组的元素：
+
+```go
+var balance = [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+```
+
+我们也可以通过字面量在声明数组的同时快速初始化数组：
+
+```go
+balance := [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+```
+
+如果数组长度不确定，可以使用 ... 代替数组的长度，编译器会根据元素个数自行推断数组的长度：
+
+```go
+var balance = [...]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+或
+balance := [...]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+```
+
+如果设置了数组的长度，我们还可以通过指定下标来初始化元素：
+
+```go
+//  将索引为 1 和 3 的元素初始化
+balance := [5]float32{1:2.0,3:7.0}
+```
+
+ 初始化数组中 {} 中的元素个数不能大于 [] 中的数字。
+
+ 如果忽略 [] 中的数字不设置数组大小，Go 语言会根据元素的个数来设置数组的大小：
+
+```go
+ balance[4] = 50.0
+```
+
+以上实例读取了第五个元素。数组元素可以通过索引（位置）来读取（或者修改），索引从 0 开始，第一个元素索引为 0，第二个索引为 1，以此类推。
+
+![image-20240921103836002](../img/image-20240921103836002.png)
+
+## 访问数组元素
+
+数组元素可以通过索引（位置）来读取。格式为数组名后加中括号，中括号中为索引的值。例如：
+
+```
+var salary float32 = balance[9]
+```
+
+以上实例读取了数组 balance 第 10 个元素的值。
+
+以下演示了数组完整操作（声明、赋值、访问）的实例：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   var n [10]int /* n 是一个长度为 10 的数组 */
+   var i,j int
+
+   /* 为数组 n 初始化元素 */         
+   for i = 0; i < 10; i++ {
+      n[i] = i + 100 /* 设置元素为 i + 100 */
+   }
+
+   /* 输出每个数组元素的值 */
+   for j = 0; j < 10; j++ {
+      fmt.Printf("Element[%d] = %d\n", j, n[j] )
+   }
+}
+```
+
+结果如下：
+
+```go
+Element[0] = 100
+Element[1] = 101
+Element[2] = 102
+Element[3] = 103
+Element[4] = 104
+Element[5] = 105
+Element[6] = 106
+Element[7] = 107
+Element[8] = 108
+Element[9] = 109
+```
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   var i,j,k int
+   // 声明数组的同时快速初始化数组
+   balance := [5]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+
+   /* 输出数组元素 */         ...
+   for i = 0; i < 5; i++ {
+      fmt.Printf("balance[%d] = %f\n", i, balance[i] )
+   }
+   
+   balance2 := [...]float32{1000.0, 2.0, 3.4, 7.0, 50.0}
+   /* 输出每个数组元素的值 */
+   for j = 0; j < 5; j++ {
+      fmt.Printf("balance2[%d] = %f\n", j, balance2[j] )
+   }
+
+   //  将索引为 1 和 3 的元素初始化
+   balance3 := [5]float32{1:2.0,3:7.0}  
+   for k = 0; k < 5; k++ {
+      fmt.Printf("balance3[%d] = %f\n", k, balance3[k] )
+   }
+}
+```
+
+结果如下：
+
+```go
+balance[0] = 1000.000000
+balance[1] = 2.000000
+balance[2] = 3.400000
+balance[3] = 7.000000
+balance[4] = 50.000000
+balance2[0] = 1000.000000
+balance2[1] = 2.000000
+balance2[2] = 3.400000
+balance2[3] = 7.000000
+balance2[4] = 50.000000
+balance3[0] = 0.000000
+balance3[1] = 2.000000
+balance3[2] = 0.000000
+balance3[3] = 7.000000
+balance3[4] = 0.000000
+```
+
+## 多维数组
+
+Go 语言支持多维数组，以下为常用的多维数组声明方式：
+
+```go
+var variable_name [SIZE1][SIZE2]...[SIZEN] variable_type
+```
+
+以下实例声明了三维的整型数组：
+
+```go
+var threedim [5][10][4]int
+```
+
+## 二维数组
+
+二维数组是最简单的多维数组，二维数组本质上是由一维数组组成的。二维数组定义方式如下：
+
+```
+var arrayName [ x ][ y ] variable_type
+```
+
+variable_type 为 Go 语言的数据类型，arrayName 为数组名，二维数组可认为是一个表格，x 为行，y 为列，下图演示了一个二维数组 a 为三行四列：
+
+![img](../img/go-array-2021-01-19.png)
+
+二维数组中的元素可通过` a[ i ][ j ]`来访问。
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // Step 1: 创建数组
+    values := [][]int{}
+
+    // Step 2: 使用 append() 函数向空的二维数组添加两行一维数组
+    row1 := []int{1, 2, 3}
+    row2 := []int{4, 5, 6}
+    values = append(values, row1)
+    values = append(values, row2)
+
+    // Step 3: 显示两行数据
+    fmt.Println("Row 1")
+    fmt.Println(values[0])
+    fmt.Println("Row 2")
+    fmt.Println(values[1])
+
+    // Step 4: 访问第一个元素
+    fmt.Println("第一个元素为：")
+    fmt.Println(values[0][0])
+}
+```
+
+
+
+结果为：
+
+```go
+Row 1
+[1 2 3]
+Row 2
+[4 5 6]
+第一个元素为：
+1
+```
+
+
+
+## 初始化二维数组
+
+多维数组可通过大括号来初始值。以下实例为一个 3 行 4 列的二维数组：
+
+```go
+a := [3][4]int{  
+ {0, 1, 2, 3} ,   /*  第一行索引为 0 */
+ {4, 5, 6, 7} ,   /*  第二行索引为 1 */
+ {8, 9, 10, 11},   /* 第三行索引为 2 */
+}
+```
+
+
+
+**注意：**以上代码中倒数第二行的` } `必须要有逗号，因为最后一行的`}` 不能单独一行，也可以写成这样：
+
+```go
+a := [3][4]int{  
+ {0, 1, 2, 3} ,   /*  第一行索引为 0 */
+ {4, 5, 6, 7} ,   /*  第二行索引为 1 */
+ {8, 9, 10, 11}}   /* 第三行索引为 2 */
+```
+
+以下实例初始化一个 2 行 2 列 的二维数组：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // 创建二维数组
+    sites := [2][2]string{}
+
+    // 向二维数组添加元素
+    sites[0][0] = "Google"
+    sites[0][1] = "Runoob"
+    sites[1][0] = "Taobao"
+    sites[1][1] = "Weibo"
+
+    // 显示结果
+    fmt.Println(sites)
+}
+```
+
+输出结果为：
+
+```go
+[[Google Runoob] [Taobao Weibo]]
+```
+
+## 访问二维数组
+
+二维数组通过指定坐标来访问。如数组中的行索引与列索引，例如：
+
+```go
+val := a[2][3]
+或
+var value int = a[2][3]
+```
+
+以上实例访问了二维数组 val 第三行的第四个元素。
+
+二维数组可以使用循环嵌套来输出元素：
+
+
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   /* 数组 - 5 行 2 列*/
+   var a = [5][2]int{ {0,0}, {1,2}, {2,4}, {3,6},{4,8}}
+   var i, j int
+
+   /* 输出数组元素 */
+   for  i = 0; i < 5; i++ {
+      for j = 0; j < 2; j++ {
+         fmt.Printf("a[%d][%d] = %d\n", i,j, a[i][j] )
+      }
+   }
+}
+```
+
+输出结果为：
+
+```go
+a[0][0] = 0
+a[0][1] = 0
+a[1][0] = 1
+a[1][1] = 2
+a[2][0] = 2
+a[2][1] = 4
+a[3][0] = 3
+a[3][1] = 6
+a[4][0] = 4
+a[4][1] = 8
+```
+
+以下实例创建各个维度元素数量不一致的多维数组：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    // 创建空的二维数组
+    animals := [][]string{}
+
+    // 创建三一维数组，各数组长度不同
+    row1 := []string{"fish", "shark", "eel"}
+    row2 := []string{"bird"}
+    row3 := []string{"lizard", "salamander"}
+
+    // 使用 append() 函数将一维数组添加到二维数组中
+    animals = append(animals, row1)
+    animals = append(animals, row2)
+    animals = append(animals, row3)
+
+    // 循环输出
+    for i := range animals {
+        fmt.Printf("Row: %v\n", i)
+        fmt.Println(animals[i])
+    }
+}
+```
+
+输出结果为：
+
+```go
+Row: 0
+[fish shark eel]
+Row: 1
+[bird]
+Row: 2
+[lizard salamander]
+```
+
+# Go 语言向函数传递数组
+
+Go 语言中的数组是值类型，因此在将数组传递给函数时，实际上是传递数组的**副本**。
+
+如果你想向函数传递数组参数，你需要在函数定义时，声明形参为数组，我们可以通过以下两种方式来声明：
+
+### 方式一
+
+形参设定数组大小：
+
+```go
+func myFunction(param [10]int) {
+    ....
+}
+```
+
+### 方式二
+
+形参未设定数组大小：
+
+```go
+func myFunction(param []int) {
+    ....
+}
+```
+
+如果你想要在函数内修改原始数组，可以通过传递数组的指针来实现。
+
+### 实例
+
+让我们看下以下实例，实例中函数接收整型数组参数，另一个参数指定了数组元素的个数，并返回平均值：
+
+```go
+func getAverage(arr []int, size int) float32
+{
+   var i int
+   var avg, sum float32  
+
+   for i = 0; i < size; ++i {
+      sum += arr[i]
+   }
+
+   avg = sum / size
+
+   return avg;
+}
+```
+
+接下来我们来调用这个函数：
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+   /* 数组长度为 5 */
+   var  balance = [5]int {1000, 2, 3, 17, 50}
+   var avg float32
+
+   /* 数组作为参数传递给函数 */
+   avg = getAverage( balance, 5 ) ;
+
+   /* 输出返回的平均值 */
+   fmt.Printf( "平均值为: %f ", avg );
+}
+func getAverage(arr [5]int, size int) float32 {
+   var i,sum int
+   var avg float32  
+
+   for i = 0; i < size;i++ {
+      sum += arr[i]
+   }
+
+   avg = float32(sum) / float32(size)
+
+   return avg;
+}
+```
+
+输出结果为：
+
+```go
+平均值为: 214.399994
+```
+
+以上实例中我们使用的形参并未设定数组大小。
+
+浮点数计算输出有一定的偏差，你也可以转整型来设置精度。
+
+
+
+
+
+```go
+package main
+import (
+    "fmt"
+)
+func main() {
+    a := 1.69
+    b := 1.7
+    c := a * b      // 结果应该是2.873
+    fmt.Println(c)  // 输出的是2.8729999999999998
+}
+```
+
+
+
+设置固定精度：
+
+```go
+package main
+import (
+    "fmt"
+)
+func main() {
+    a := 1690           // 表示1.69
+    b := 1700           // 表示1.70
+    c := a * b          // 结果应该是2873000表示 2.873
+    fmt.Println(c)      // 内部编码
+    fmt.Println(float64(c) / 1000000) // 显示
+}
+```
+
+如果你想要在函数内修改原始数组，可以通过传递数组的指针来实现。
+
+以下实例演示如何向函数传递数组，函数接受一个数组和数组的指针作为参数：
+
+```go
+package main
+
+import "fmt"
+
+// 函数接受一个数组作为参数
+func modifyArray(arr [5]int) {
+    for i := 0; i < len(arr); i++ {
+        arr[i] = arr[i] * 2
+    }
+}
+
+// 函数接受一个数组的指针作为参数
+func modifyArrayWithPointer(arr *[5]int) {
+    for i := 0; i < len(*arr); i++ {
+        (*arr)[i] = (*arr)[i] * 2
+    }
+}
+
+func main() {
+    // 创建一个包含5个元素的整数数组
+    myArray := [5]int{1, 2, 3, 4, 5}
+
+    fmt.Println("Original Array:", myArray)
+
+    // 传递数组给函数，但不会修改原始数组的值
+    modifyArray(myArray)
+    fmt.Println("Array after modifyArray:", myArray)
+
+    // 传递数组的指针给函数，可以修改原始数组的值
+    modifyArrayWithPointer(&myArray)
+    fmt.Println("Array after modifyArrayWithPointer:", myArray)
+}
+```
+
+在上面的例子中，modifyArray 函数接受一个数组，并尝试修改数组的值，但在主函数中调用后，原始数组并未被修改。相反，modifyArrayWithPointer 函数接受一个数组的指针，并通过指针修改了原始数组的值。
+
+以上实例执行输出结果为：
+
+```go
+Original Array: [1 2 3 4 5]
+Array after modifyArray: [1 2 3 4 5]
+Array after modifyArrayWithPointer: [2 4 6 8 10]
+```
+
+# Go 语言指针
