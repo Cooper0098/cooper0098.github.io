@@ -816,3 +816,120 @@ public:
 
 - 由虚基类派生出的对象初始化时，直接调用**虚基类**的构造函数。因此，若将一个类定义为虚基类，则一定有正确的构造函数可供所有派生类调用。
 - 再次强调，用虚基类进行多重派生时，若**虚基类**没有缺省的构造函数，则在每一个派生类的构造函数中都必须有对**虚基类**构造函数的调用 （且首先调用）。
+
+## 虚函数
+
+
+
+**虚函数**是 C++ 中实现多态性的重要机制。它允许在基类中声明一个函数，并在派生类中重新定义（重写）这个函数。通过虚函数，可以在运行时根据对象的实际类型调用相应的函数，实现动态绑定。
+
+### 定义和用法
+
+虚函数通过在基类中使用关键字 `virtual` 声明。当基类指针或引用指向派生类对象时，虚函数确保调用的是派生类中重写的版本。
+
+### 示例代码
+
+```cpp
+#include <iostream>
+
+class Base {
+public:
+    virtual void show() { // 虚函数
+        std::cout << "Base class show function called." << std::endl;
+    }
+    virtual ~Base() {} // 虚析构函数
+};
+
+class Derived : public Base {
+public:
+    void show() override { // 重写基类的虚函数
+        std::cout << "Derived class show function called." << std::endl;
+    }
+};
+
+int main() {
+    Base* ptr;               // 基类指针
+    Derived derivedObj;     // 派生类对象
+    ptr = &derivedObj;      // 指向派生类对象
+    
+    ptr->show();            // 调用派生类的 show 函数
+    return 0;
+}
+```
+
+### 输出结果
+
+```c
+Derived class show function called.
+```
+
+### 关键点
+
+1. **动态绑定**：虚函数的调用决定是在运行时而非编译时，允许实现多态。
+2. **基类指针或引用**：通过基类指针或引用调用虚函数时，实际调用的是对象的动态类型的相应函数。
+3. **虚析构函数**：如果类有虚函数，通常应该有虚析构函数，以确保在对象销毁时正确调用派生类的析构函数。
+4. **性能开销**：虚函数通过虚表（vtable）实现，可能会引入少许性能开销。
+
+## 抽象类
+
+
+
+**抽象类**是面向对象编程中的一种特殊类型的类，它主要用于定义子类的接口或协议。抽象类不能被实例化，也就是说，无法创建抽象类的对象。它通常包含至少一个**抽象方法**，即在抽象类中声明但不实现的方法。
+
+### 特点
+
+1. **不能实例化**：抽象类不能创建对象，只能作为基类使用。
+2. **包含抽象方法**：至少包含一个纯虚函数（抽象方法），用 `= 0` 的语法声明。
+3. **可包含具体方法**：抽象类可以包含具体方法（已经实现的方法）和成员变量。
+4. **派生类实现**：派生类必须实现所有抽象方法，才能被实例化。
+
+### 示例代码
+
+```cpp
+#include <iostream>
+
+class AbstractClass {
+public:
+    // 抽象方法
+    virtual void doSomething() = 0;
+
+    // 具体方法
+    void commonFunction() {
+        std::cout << "This is a common function." << std::endl;
+    }
+};
+
+class ConcreteClass : public AbstractClass {
+public:
+    // 实现抽象方法
+    void doSomething() override {
+        std::cout << "Doing something in ConcreteClass." << std::endl;
+    }
+};
+
+int main() {
+    // AbstractClass obj; // 错误：无法实例化抽象类
+
+    ConcreteClass myObject;
+    myObject.commonFunction(); // 调用具体方法
+    myObject.doSomething();     // 调用实现的抽象方法
+
+    return 0;
+}
+```
+
+### 输出结果
+
+```
+This is a common function.
+Doing something in ConcreteClass.
+```
+
+### 关键点
+
+- **接口定义**：抽象类通过定义接口，规定了派生类应当实现的功能。
+- **增强灵活性**：通过使用抽象类，可以轻松实现多态，提高代码的可维护性和扩展性。
+- **防止实例化**：使用抽象类可以防止意外创建基类的对象，确保只能使用具体的实现类。
+
+
+
