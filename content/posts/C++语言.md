@@ -1005,7 +1005,7 @@ template <class type> class class-name {
 
 ## 输入输出流 IO
 
-### IO
+### IO流
 
 在C++中允许用户重载运算符`<<`和`>>`，实现对象的输入和输出。重载这二个运算符时，在对象所在的类中，将重载这二个运算符的函数说明该类的友元函数。
 
@@ -1068,7 +1068,15 @@ template <class type> class class-name {
 
 
 
+
+
+
+
 ## 
+
+
+
+
 
 
 
