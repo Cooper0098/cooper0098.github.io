@@ -7,6 +7,38 @@ tags = ["Qt" , "学习"]
 
 
 
+# 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -17,13 +49,11 @@ tags = ["Qt" , "学习"]
 
 
 
-进入 `.ui` 文件所在的目录，然后在命令行中输入下面的代码示例。
+- 进入 `.ui` 文件所在的目录，然后在命令行中输入下面的代码示例。       
 
-`pyuic5   -x    xxxx.ui   -o   yyyyyy.py`     
+- `pyuic5   -x    xxxx.ui   -o   yyyyyy.py`          
+- xxxx.ui  目标文件  --->   yyyyy.py 结果      
 
-
-
-xxxx.ui  目标文件  --->   yyyyy.py 结果      
 
 
 
