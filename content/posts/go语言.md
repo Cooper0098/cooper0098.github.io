@@ -3586,7 +3586,7 @@ errorMsg is:
 
 Go 语言支持并发，通过 goroutines 和 channels 提供了一种简洁且高效的方式来实现并发。
 
-### goroutine
+## goroutine
 
 goroutine 是轻量级线程，goroutine 的调度是由 Golang 运行时进行管理的。
 
