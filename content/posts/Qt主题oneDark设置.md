@@ -7,7 +7,7 @@ tags = ["主题设置"]
 
 +++
 
-参考链接: [Qt Creator打造VScode one dark pro主题配色](https://blog.csdn.net/qq_41980754/article/details/119861293)
+参考链接:  CSDN  [Qt Creator打造VScode one dark pro主题配色](https://blog.csdn.net/qq_41980754/article/details/119861293)
 
 代码部分
 

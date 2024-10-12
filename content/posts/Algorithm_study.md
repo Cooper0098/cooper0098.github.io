@@ -89,7 +89,7 @@ m = 5 // 背包最大容量为 5
 
 
 
-## 
+
 
 # 单调栈
 
@@ -149,5 +149,26 @@ m = 5 // 背包最大容量为 5
 
 
 
-# 
+# 快速幂
+
+模板
+
+快速幂 —— 模板题 AcWing 875. 快速幂
+求 m^k mod p，时间复杂度 O(logk)。
+
+```c
+int qmi(int m, int k, int p)
+{
+    int res = 1 % p, t = m;
+    while (k)
+    {
+        if (k&1) res = res * t % p;
+        t = t * t % p;
+        k >>= 1;
+    }
+    return res;
+}
+```
+
+
 
