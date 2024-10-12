@@ -9,6 +9,83 @@ tags = ["cpp"]
 
 
 
+
+
+# emplace用法
+
+`emplace` 是 C++ 中用于容器（如 `std::vector`, `std::map`, `std::unordered_map` 等）的一种方法，允许你在容器中直接构造元素，而不需要先构造再复制或移动。这通常可以提高性能，减少不必要的对象拷贝。
+
+> 与 `insert` 类似
+
+
+
+### 使用 `emplace` 的主要特点：
+
+1. **直接在容器中构造**：`emplace` 会接受构造元素所需的所有参数，并在容器的内部直接创建该对象。
+2. **避免多次拷贝**：与 `push_back` 或 `insert` 不同，`emplace` 不会执行隐式拷贝构造，这样可以避免额外的开销。
+
+### 示例：
+
+以下是一个使用 `std::vector` 和 `std::unordered_map` 的例子，说明 `emplace` 的使用：
+
+#### 使用 `std::vector`
+
+```cpp
+#include <iostream>
+#include <vector>
+
+class Point {
+public:
+    int x, y;
+    Point(int x, int y) : x(x), y(y) {}
+};
+
+int main() {
+    std::vector<Point> points;
+
+    // 使用 emplace 方法直接构造 Point 对象
+    points.emplace_back(1, 2);
+    points.emplace_back(3, 4);
+
+    for (const auto& point : points) {
+        std::cout << "Point(" << point.x << ", " << point.y << ")" << std::endl;
+    }
+
+    return 0;
+}
+```
+
+#### 使用 `std::unordered_map`
+
+```cpp
+#include <iostream>
+#include <unordered_map>
+#include <string>
+
+int main() {
+    std::unordered_map<std::string, int> map;
+
+    // 使用 emplace 插入键值对
+    map.emplace("apple", 10);
+    map.emplace("banana", 20);
+
+    for (const auto& pair : map) {
+        std::cout << pair.first << ": " << pair.second << std::endl;
+    }
+
+    return 0;
+}
+```
+
+### 总结：
+
+- `emplace` 方法是通过 **完美转发** 构造元素，可以显著提升性能。
+- 它适用于任何需要插入或添加元素的 STL 容器。
+
+
+
+
+
 #  `min_element` 查找最小元素函数
 
 `std::min_element` 是 C++ 标准库 `<algorithm>` 中的一个非常有用的算法函数，它用于在指定范围内查找最小元素。下面我会详细解释 `min_element` 的用法，以及使用解引用操作符 `*` 的相关内容。
