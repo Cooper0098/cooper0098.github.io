@@ -172,3 +172,5 @@ int qmi(int m, int k, int p)
 
 
 
+# 并查集
+
