@@ -60,6 +60,14 @@ tags = ["Qt" , "学习"]
 
 
 
+# 设置ui禁止编辑
+
+例如
+
+```c
+ui -> tableView -> setEditTriggers(QAbstractItemView::NoEditTriggers);
+```
+
 
 
 
