@@ -12,6 +12,18 @@ tags = [""]
 
 # Draft
 
+-------
+
+
+
+
+
+
+
+
+
+
+
 
 
 cwgo server --type RPC --module github.com/cloudwego/biz-demo/gomall/demo/demo_thrift  --service demo_thrift  --idl ../../idl/echo.thrift
