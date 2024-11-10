@@ -14,6 +14,16 @@ tags = [""]
 
 
 
+cwgo server --type RPC --module github.com/cloudwego/biz-demo/gomall/demo/demo_thrift  --service demo_thrift  --idl ../../idl/echo.thrift
+
+
+
+
+
+
+
+--------
+
 > 不要心急, 每个人都有自己的时区
 
 
