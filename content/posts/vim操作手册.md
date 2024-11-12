@@ -9,7 +9,12 @@ tags = ["vim" ,"命令"]
 
 
 
+# 日常技巧
 
+
+
+1. `CTRL + r` 等于 window 下的默认 `CTRL + y`
+2. 
 
 # 1. 关于Vim
 

@@ -1,6 +1,24 @@
-.post-content pre,
+/* .post-content pre,
 code {
   font-family: "JetBrains Mono", monospace;
   font-size: 1rem;
   line-height: 1.2;
+} */
+
+.post-content pre,
+code {
+  font-family: "Inter", sans-serif; /* 修改为 Inter 字体 */
+  font-size: 1rem; /* 字体大小保持不变 */
+  line-height: 1.5; /* 行高保持不变 */
 }
+
+
+
+
+
+/* .inter-<uniquifier> {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
