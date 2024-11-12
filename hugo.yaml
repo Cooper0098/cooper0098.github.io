@@ -171,3 +171,8 @@ markup:
     # style: "github-dark"
     # style: monokai         
 
+
+
+
+params:
+  googleAnalytics: "G-GSSFCBY6CZ"
