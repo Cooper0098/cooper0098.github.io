@@ -16,11 +16,17 @@ tags = [""]
 
 
 
+cwgo server --type RPC --module github.com/cloudwego/biz-demo/gomall/demo/demo_thrift  --service demo_thrift  --idl ../../idl/echo.thrift
+
 
 
 
 
 ----
+
+
+
+
 
 
 
@@ -46,7 +52,7 @@ tags = [""]
 
 
 
-cwgo server --type RPC --module github.com/cloudwego/biz-demo/gomall/demo/demo_thrift  --service demo_thrift  --idl ../../idl/echo.thrift
+
 
 
 
@@ -66,9 +72,17 @@ cwgo server --type RPC --module github.com/cloudwego/biz-demo/gomall/demo/demo_t
 
 
 
+
+
+***
+
+
+
 # 想法
 
 1. 存放仓库, 存放物品 , 订阅 , 存放100年 , 放入海底
+
+-----
 
 # 托福计划
 
