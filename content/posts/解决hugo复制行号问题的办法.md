@@ -21,12 +21,12 @@ tags = [ "记录"]
 
 # 解决办法
 
- 在hugo.yaml文件直接增加以下代码, 这段代码的作用是禁用代码块中的行号显示。
+ 在`hugo.yaml`文件直接增加以下代码, 这段代码的作用是禁用代码块中的行号显示。
 
 ```yaml
 markup:
   highlight:
-    lineNumbers: true
+    lineNumbers: false
 ```
 
 
