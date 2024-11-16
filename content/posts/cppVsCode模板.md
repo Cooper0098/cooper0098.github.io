@@ -13,6 +13,24 @@ tags = ["模板" , "cpp"]
 
 # Cpp各类模板设置
 
+## 插入代码模板
+
+```json
+"nameXXX": {
+		"prefix": "XXX操作码",
+		"body": [
+			"xxxxxx",
+			"xxxxxx",
+			"yyyyyy",
+			"yyyyyy",
+			"$0"
+		]
+	},
+
+```
+
+
+
 ## 头文件 
 
 ```cpp
@@ -101,7 +119,7 @@ int main(){
 			"typedef vector<int> vi;     // vector<int>vi",
 			"",
 			"const long long inf = numeric_limits<long long>::max(); // 无穷大",
-			"const int N = 100100; // 100 百 , 100100 十万 , 1100100 一百万 , 100100100 一亿",
+			"const int N = 100100; //  100100 十万 , 1100100 一百万 , 100100100 一亿",
 			"",
 			"void Mysolve(){",
 			"    ",
@@ -119,6 +137,15 @@ int main(){
 			"$0"
 		]
 	},
+
+}
+```
+
+
+
+## leetcode模板
+
+```json
 	"leetcode": {
 		"prefix": "lc",
 		"body": [
@@ -132,34 +159,60 @@ int main(){
 			"$0"
 		]
 	},
-}
 ```
 
 
 
-## 代码模板
 
-```json
-"nameXXX": {
-		"prefix": "XXX操作码",
-		"body": [
-			"xxxxxx",
-			"xxxxxx",
-			"yyyyyy",
-			"yyyyyy",
-			"$0"
-		]
-	},
-
-```
-
-------
 
 > 算法模板
 
+## 高精度算法
+
 ```json
 
 
 
 ```
 
+##
+
+
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
+
+##
