@@ -173,3 +173,9 @@
   /* GenericUnderline */ .chroma .gl { text-decoration:underline }
   /* TextWhitespace */ .chroma .w { color:#6e7681 }
 }
+
+
+/* 禁止代码块行号被选中 */
+.hljs-ln-numbers {
+  user-select: none;
+}
