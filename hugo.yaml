@@ -173,7 +173,8 @@ markup:
 
 markup:
   highlight:
-    lineNumbers: true
+    # lineNumbers: true
+     lineNumbers: false
 
 
 
