@@ -171,6 +171,9 @@ markup:
     # style: "github-dark"
     # style: monokai         
 
+markup:
+  highlight:
+    lineNumbers: true
 
 
 
