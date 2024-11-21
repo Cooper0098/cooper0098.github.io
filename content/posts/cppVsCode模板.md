@@ -428,11 +428,56 @@ bool check_date(int date) // 判断日期是否合法 , 合法形式: 20240201
 
 ## 区间合并
 
+```json
+
+	"MERGE_SEGMENTS": {         //合并区间
+		"prefix": "mergeSegments",
+		"body": [
+			"vector<pii> segment;",
+			"void mergeMy(vector<pii> &segment) {",
+			"    vector<pii> ans;",
+			"",
+			"    sort(segment.begin(), segment.end()); // 默认排序左端点",
+			"",
+			"    int start = -2e9, end = -2e9;",
+			"",
+			"    for (auto seg : segment) {",
+			"        if (end < seg.first) {",
+			"            if (start != -2e9) // 没有交集",
+			"                ans.push_back({start, end});",
+			"            start = seg.first, end = seg.second;",
+			"        } else {",
+			"            end = max(end, seg.second); // 合并情况不添加ans",
+			"        }",
+			"    }",
+			"    if (start != -2e9) // 防止vector是空集 , 空集就是也是一个区间",
+			"        ans.push_back({start, end});",
+			"    segment = ans;",
+			"}",
+			"",
+			"// int n;",
+			"// cin >> n;",
+			"// for (int i = 0; i < n; i++) {",
+			"//     int l, r;",
+			"//     cin >> l >> r;",
+			"//     segment.push_back({l, r});",
+			"// }",
+			"// mergeMy(segment);",
+			"$0"
+		]
+	},
+```
+
 
 
 
 
 ## 双指针
+
+```json
+
+
+```
 
 
 
@@ -545,7 +590,15 @@ bool check_date(int date) // 判断日期是否合法 , 合法形式: 20240201
 
 
 
-##
+## 前缀和
+
+```json
+
+
+
+```
+
+
 
 ##
 
