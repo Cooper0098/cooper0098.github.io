@@ -31,14 +31,6 @@ want you to act as an expert in scientific writing, l will provide you with some
 
 
 
-# 根据大纲写作
-
-> 请根据上述提纲，撰写一篇详细的文章，并对提纲中提到的细节进行扩展说明。
-
-```py
-Based on the above outline, please write a detailed article and expand on the details mentioned in the outline.
-```
-
 
 
 #
