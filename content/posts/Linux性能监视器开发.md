@@ -55,3 +55,29 @@ git clone git@github.com:xxxxxxxxxxxxxxxxxxxxxxxx
 
 
 
+## **vscode 远程ssh 到ubuntu** 
+
+如果是虚拟机，安装`net-tool` 后用 ifconfig 命令可以查看当前虚拟机的IP地址。如果是云服务器，则直接去控制台看云服务器的公网IP。
+
+```Bash
+sudo apt install net-tools
+# 查看ip的命令如下
+ifconfig
+```
+
+随后 vscode 安装远程连接工具，进行连接
+
+![image-20241125231320839](../img/image-20241125231320839.png)
+![image-20241125231320839](img/image-20241125231320839.png)
+
+![image-20241125231332953](../img/image-20241125231332953.png)
+![image-20241125231332953](img/image-20241125231332953.png)
+
+Remote ssh新增一个ssh链接，输入如下命令链接你的Linux主机，随后会弹出目标主机系统是什么，选择Linux后，输入你的ssh密码就可以链接远程主机了。
+
+```Plain
+ssh 用户名@IP地址
+```
+
+
+
