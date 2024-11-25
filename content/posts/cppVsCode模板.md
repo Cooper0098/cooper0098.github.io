@@ -475,8 +475,17 @@ bool check_date(int date) // 判断日期是否合法 , 合法形式: 20240201
 ## 双指针
 
 ```json
-
-
+	"TWO_POINTERS": { //双指针
+		"prefix": "double_two_pointers",
+		"body": [
+			"for (int i = 0, j = 0; i < n; i++) {",
+			"    while (j < i && check(i, j)) j++;",
+			"",
+			"    // 具体问题的逻辑",
+			"}"
+		],
+		"description": "A two-pointer approach used for solving specific problems where conditions depend on both pointers."
+	},
 ```
 
 
@@ -563,8 +572,6 @@ bool check_date(int date) // 判断日期是否合法 , 合法形式: 20240201
 
 ## 整数2分
 
-
-
 ```json
 "整数二分": {
 		"prefix": "2f",
@@ -586,16 +593,6 @@ bool check_date(int date) // 判断日期是否合法 , 合法形式: 20240201
 			"$0"
 		]
 	},
-```
-
-
-
-## 前缀和
-
-```json
-
-
-
 ```
 
 

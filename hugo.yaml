@@ -77,19 +77,19 @@ params:
     Title: "Hey Guys 👋 Here is Cooper!"
     # 首页的 profile 内容
     Content: >
-      Welcome to my Blog! 这里主要记录了我的日常创作，项目计划，学习进度。
+     <p> Welcome to my Blog! 这里主要记录了我的日常创作，项目计划，学习进度。</p>
       <br>
       <br>
-      博客因为是托管在 Github 上面，所以，挂上一个梯子可能会让访问更加顺畅。
+     <p> 博客因为是托管在 Github 上面，所以，挂上一个梯子可能会让访问更加顺畅。</p>
       <br>
       <br>
-      也可以在其他地方访问我的文字材料，如下：
+     <p> 也可以在其他地方访问我的文字材料，如下：</p>
       <br>
       <br>
-      Welcome to my Blog! This space mainly documents my daily creations, project plans, and learning progress.
+    <p>  Welcome to my Blog! This space mainly documents my daily creations, project plans, and learning progress. </p>
       <br>
       <br>
-      You can also access my written materials elsewhere as follows:
+     <p> You can also access my written materials elsewhere as follows:  </p>
       <br>
       <div>
       ● [Cooper's GitHub](https://github.com/Cooper0098)
