@@ -13,14 +13,14 @@ tags = [ "Linux" , "项目"  ]
 
 
 
-# Linux配置
+# 1-Linux配置
 
 - 虚拟机配置建议是：
 - 虚拟机ubuntu镜像不要低于18.04 选择net模式，30-40G硬盘大小
 - 硬盘一定要设置30-40G大小 
 - 在ubuntu git clone 代码，千万不要在windows上下载，拷贝过去，windows会改变代码中可执行文件的权限和格式
 
-# git 环境配置
+## git 环境配置
 
 ### **github ssh 免密配置**
 
@@ -68,16 +68,72 @@ ifconfig
 随后 vscode 安装远程连接工具，进行连接
 
 ![image-20241125231320839](../img/image-20241125231320839.png)
-![image-20241125231320839](img/image-20241125231320839.png)
+![image-20241125231320839](./img/image-20241125231320839.png)
 
 ![image-20241125231332953](../img/image-20241125231332953.png)
-![image-20241125231332953](img/image-20241125231332953.png)
+![image-20241125231332953](./img/image-20241125231332953.png)
 
 Remote ssh新增一个ssh链接，输入如下命令链接你的Linux主机，随后会弹出目标主机系统是什么，选择Linux后，输入你的ssh密码就可以链接远程主机了。
 
 ```Plain
 ssh 用户名@IP地址
 ```
+
+
+
+## **项目docker模块构建** 
+
+### **安装docker**
+
+```Bash
+sudo apt install curl
+
+curl -fsSL https://test.docker.com -o test-docker.sh
+```
+
+下载docker的脚本，并命名为test-docker.sh，随后执行脚本 `sudo sh test-docker.sh` 
+
+### **docker加入用户组**
+
+加入docker的用户组后，不需要添加sudo也可以运行docker的命令。
+
+```Bash
+sudo groupadd docker                                                                 sudo groupadd docker
+sudo usermod -aG docker ${USER}
+sudo systemctl restart docker 
+newgrp docker
+docker ps
+```
+
+注意：需要重启一下机器，让配置全局生效
+
+### 构建镜像前，需看配置视频
+
+第三个视频 docker build 搭建项目环境
+
+# 2-**docker**模块 
+
+## **知识讲解**
+
+
+
+
+
+### docker与虚拟机
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
