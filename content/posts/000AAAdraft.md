@@ -14,6 +14,28 @@ tags = [""]
 
 
 
+​      "type": "node",
+
+​      "request": "launch",
+
+​      "name": "Launch Program",
+
+​      "skipFiles": [
+
+​        "<node_internals>/**"
+
+​      ],
+
+​      "program": "${workspaceFolder}/test/tx1.cpp",
+
+​      "outFiles": [
+
+​        "${workspaceFolder}/**/*.js"
+
+​      ]
+
+
+
 
 
 MPU6050 六轴姿态数据采集 + 

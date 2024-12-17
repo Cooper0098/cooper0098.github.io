@@ -75,7 +75,7 @@ tags = ["AI" , "提示词"]
 
 ![image-20241217233216217](./img/image-20241217233216217.png)
 
-# 以问题进行提问
+# 以问题扩展问题进行提问
 
 
 
@@ -83,11 +83,9 @@ tags = ["AI" , "提示词"]
 我想深入了解,系统学习,熟练掌握 xxx ，我应该问你什么问题？请给我列出10个
 ```
 
-
-
 # 加上具体的例子   
 
-```go
+```c
 Add specific examples
 ```
 
@@ -102,5 +100,7 @@ help me organize and refine the content above.
 ```c
 want you to act as an expert in scientific writing, l will provide you with some paragraphs in English and your task is to improve the spelling, grammar clarity, conciseness and overalreadability of the text providedwhile breaking down longsentences, reducing repetitionand providing improvementsuggestions. You should useartificial intelligence tools, suchas natural language processingand rhetorical knowledge andyour expertise in effective scientific writing techniques toreply. Provide the output as a markdown table with the head in Chinese. The first column is the originasentence, and the secondcolumn is the sentence afterediting and the third columnprovides explanation in Chinese Please edit the following text in a scientific tone:
 ```
+
+- 加入这个提示词, 实现输入的文章**变成**学术语气的文章
 
 
