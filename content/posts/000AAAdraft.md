@@ -50,42 +50,6 @@ cwgo server --type RPC --module github.com/cloudwego/biz-demo/gomall/demo/demo_t
 
 
 
-----
-
-
-
-
-
-
-
-
-
----
-
-------
-
---------------------------------------
-
-
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 --------

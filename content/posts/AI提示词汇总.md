@@ -35,7 +35,7 @@ tags = ["AI" , "提示词"]
 
 
 
-## STER ~~ **COSTAR** 精简提示
+## **STER** = COSTAR 的精简提示
 
 ![image-20241217232655484](../img/image-20241217232655484.png)
 
@@ -102,5 +102,4 @@ want you to act as an expert in scientific writing, l will provide you with some
 ```
 
 - 加入这个提示词, 实现输入的文章**变成**学术语气的文章
-
 
