@@ -399,7 +399,7 @@ Once the model is deployed on the STM32, the UI displays the recognized gesture 
 
 ------
 
-### 4. **Insights and Experiences**
+### 4. **Insights and Experiences**   
 
 The development of the gesture recognition system provided valuable insights into embedded machine learning, real-time data processing, and hardware-software integration.
 
