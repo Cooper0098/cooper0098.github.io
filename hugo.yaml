@@ -98,7 +98,7 @@ params:
       url: "https://github.com/Cooper0098"
     - name: X
       title: Follow my Twitter
-      url: "https://x.com/Cooper_Zhang_"
+      url: "https://x.com"
     - name: Bilibili
       title: 关注我的 B 站帐号
       url: "https://space.bilibili.com/97534177"
@@ -107,7 +107,7 @@ params:
       url: "https://youtube.com"
     - name: Telegram
       title: Contact Me
-      url: "https://t.me/Cooper_winter"
+      url: "https://space.bilibili.com/97534177"
 
   # 搜索
   fuseOpts:
